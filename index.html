@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>吉他的發展歷史｜From Acoustic to Electric</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+        color: #2b211b;
+        background: #f7f2eb;
+        line-height: 1.8;
+      }
+      header {
+        min-height: 78vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        padding: 50px 20px;
+        background:
+          linear-gradient(rgba(35, 22, 15, 0.48), rgba(35, 22, 15, 0.7)),
+          url("https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1800&q=85")
+            center/cover;
+      }
+      header h1 {
+        margin: 0;
+        font-size: clamp(3rem, 8vw, 6.5rem);
+        letter-spacing: 0.08em;
+      }
+      header p {
+        font-size: 1.15rem;
+        margin: 8px 0 25px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 25px;
+        color: #fff;
+        background: #9b623f;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        padding: 13px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 2px 15px #0002;
+      }
+      nav a {
+        color: #5b3b29;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+      main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 65px 20px;
+      }
+      section {
+        margin-bottom: 75px;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+      .title h2 {
+        font-size: 2.2rem;
+        margin: 0 0 5px;
+      }
+      .title p {
+        color: #987a64;
+      }
+      .intro {
+        background: #fff;
+        padding: 30px 35px;
+        border-radius: 20px;
+        box-shadow: 0 8px 28px #573b2518;
+      }
+      .timeline {
+        position: relative;
+        margin: 20px 0;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: #c49b7b;
+        transform: translateX(-50%);
+      }
+      .event {
+        width: 50%;
+        padding: 15px 40px 15px 0;
+        position: relative;
+      }
+      .event:nth-child(even) {
+        margin-left: 50%;
+        padding: 15px 0 15px 40px;
+      }
+      .event::after {
+        content: "";
+        position: absolute;
+        top: 30px;
+        right: -9px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #9b623f;
+        border: 4px solid #f7f2eb;
+      }
+      .event:nth-child(even)::after {
+        left: -9px;
+        right: auto;
+      }
+      .event-box {
+        background: #fff;
+        padding: 22px;
+        border-radius: 16px;
+        box-shadow: 0 7px 22px #573b2515;
+      }
+      .year {
+        color: #9b623f;
+        font-weight: bold;
+        font-size: 1.25rem;
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 20px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 18px;
+        display: block;
+      }
+      .caption {
+        padding: 10px 3px;
+        color: #705a4a;
+      }
+      .video {
+        position: relative;
+        padding-top: 56.25%;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px #0002;
+      }
+      .video iframe {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      .map {
+        width: 100%;
+        height: 380px;
+        border: 0;
+        border-radius: 20px;
+      }
+      .sources {
+        background: #2f251f;
+        color: #eee;
+        border-radius: 18px;
+        padding: 25px;
+      }
+      .sources a {
+        color: #e9c6a8;
+      }
+      footer {
+        text-align: center;
+        padding: 28px;
+        background: #2f251f;
+        color: #ddd;
+      }
+      @media (max-width: 700px) {
+        nav a {
+          margin: 0 6px;
+          font-size: 0.9rem;
+        }
+        .timeline::before {
+          left: 8px;
+        }
+        .event,
+        .event:nth-child(even) {
+          width: 100%;
+          margin-left: 0;
+          padding: 15px 0 15px 35px;
+        }
+        .event::after,
+        .event:nth-child(even)::after {
+          left: 0;
+          right: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div>
+        <p>THE HISTORY OF THE GUITAR</p>
+        <h1>吉他</h1>
+        <p>從早期弦樂器到現代電吉他的演變</p>
+        <a class="btn" href="#history">開始探索歷史</a>
+      </div>
+    </header>
+
+    <nav>
+      <a href="#about">簡介</a>
+      <a href="#history">發展歷史</a>
+      <a href="#gallery">圖片</a>
+      <a href="#video">影片</a>
+      <a href="#map">地圖</a>
+    </nav>
+
+    <main>
+      <section id="about">
+        <div class="title">
+          <h2>吉他的發展歷史</h2>
+          <p>一件樂器，如何走過數百年的音樂旅程？</p>
+        </div>
+        <div class="intro">
+          <p>
+            吉他是一種具有悠久歷史的弦樂器，它的確切起源並沒有單一答案，但現代吉他的形成受到
+            歐洲與中東多種撥弦樂器傳統影響。到了文藝復興時期，類似吉他的樂器在歐洲逐漸發展，
+            16、17 世紀出現了具有多組琴弦的早期吉他。19
+            世紀，六弦吉他逐漸成為主流，而西班牙
+            製琴師安東尼奧・德・托雷斯（Antonio de
+            Torres）透過放大琴身、調整比例與結構等方式，
+            建立了接近現代古典吉他的外形與聲學特徵。進入 20
+            世紀後，音樂廳、爵士樂與廣播等新
+            發展讓樂手需要更大的音量，因此製琴師開始研究共鳴箱、鋼弦與電氣擴音。1920
+            年代起， 電吉他的發展逐漸加速；到了 1940、1950
+            年代，實心電吉他與新型拾音器帶來完全不同的
+            音色。此後，吉他成為藍調、爵士、搖滾、流行、金屬等音樂的重要樂器。從木製原聲琴到
+            可以透過效果器塑造聲音的電吉他，吉他的歷史其實也是音樂、科技與文化不斷互相影響的歷史。
+          </p>
+        </div>
+      </section>
+
+      <section id="history">
+        <div class="title">
+          <h2>歷史時間軸</h2>
+          <p>從早期吉他到現代電吉他</p>
+        </div>
+
+        <div class="timeline">
+          <div class="event">
+            <div class="event-box">
+              <div class="year">15–16 世紀</div>
+              <h3>早期吉他</h3>
+              <p>
+                歐洲出現多種與現代吉他相關的撥弦樂器。早期吉他常使用多組雙弦，琴身也比現代吉他小。
+              </p>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-box">
+              <div class="year">17–18 世紀</div>
+              <h3>巴洛克吉他</h3>
+              <p>
+                五組弦的巴洛克吉他逐漸流行，琴體與調弦方式持續改變，並在歐洲音樂中扮演重要角色。
+              </p>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-box">
+              <div class="year">19 世紀</div>
+              <h3>現代古典吉他的形成</h3>
+              <p>
+                六根單弦逐漸成為主流。Antonio de Torres
+                擴大琴身並改良結構，奠定現代古典吉他的基本形式。
+              </p>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-box">
+              <div class="year">1920–1930 年代</div>
+              <h3>電氣擴音時代</h3>
+              <p>
+                大型樂團與廣播讓「更大的音量」成為需求，拾音器、共鳴琴與電氣擴音技術快速發展。
+              </p>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-box">
+              <div class="year">1940–1950 年代</div>
+              <h3>實心電吉他</h3>
+              <p>
+                實心琴身電吉他逐漸成熟，新的設計與拾音器讓吉他在爵士、藍調及搖滾樂中更加突出。
+              </p>
+            </div>
+          </div>
+
+          <div class="event">
+            <div class="event-box">
+              <div class="year">20 世紀後期～今日</div>
+              <h3>多元化發展</h3>
+              <p>
+                電吉他、木吉他、半空心吉他等類型持續發展，效果器、數位音訊與現代製琴技術也拓展了聲音可能性。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <div class="title">
+          <h2>吉他的不同面貌</h2>
+          <p>從木質原聲琴到現代舞台上的電吉他</p>
+        </div>
+
+        <div class="gallery">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1525201548942-d8732f6617a0?auto=format&fit=crop&w=900&q=85"
+              alt="木吉他"
+            />
+            <div class="caption">
+              <strong>原聲吉他</strong>｜以琴身共鳴產生自然聲音。
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?auto=format&fit=crop&w=900&q=85"
+              alt="電吉他"
+            />
+            <div class="caption">
+              <strong>電吉他</strong>｜透過拾音器與擴大機產生聲音。
+            </div>
+          </div>
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02?auto=format&fit=crop&w=900&q=85"
+              alt="吉他演奏"
+            />
+            <div class="caption">
+              <strong>現代演奏</strong
+              >｜吉他已成為世界各地多種音樂風格的重要樂器。
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="video">
+        <div class="title">
+          <h2>影片介紹</h2>
+          <p>Smithsonian Education：Inventing Electric Guitars</p>
+        </div>
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/kV19iB-_U5g"
+            title="Inventing Electric Guitars - Smithsonian Education"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+              web-share;
+            "
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </section>
+
+      <section id="map">
+        <div class="title">
+          <h2>吉他發展的重要地點</h2>
+          <p>西班牙：現代古典吉他發展的重要文化地區</p>
+        </div>
+        <iframe
+          class="map"
+          src="https://www.google.com/maps?q=Antonio+de+Torres+guitar+Spain&output=embed"
+          loading="lazy"
+          allowfullscreen
+        >
+        </iframe>
+      </section>
+
+      <section>
+        <div class="title">
+          <h2>資料來源</h2>
+        </div>
+        <div class="sources">
+          <p>
+            本網頁內容主要參考 Smithsonian Institution、Musical Instrument
+            Museum 與 Yamaha 的吉他歷史資料。
+          </p>
+          <p>
+            Smithsonian：
+            <a
+              href="https://music.si.edu/story/invention-electric-guitar"
+              target="_blank"
+              >The Invention of the Electric Guitar</a
+            >
+          </p>
+          <p>
+            Yamaha：
+            <a
+              href="https://www.yamaha.com/en/musical_instrument_guide/classical_guitar/structure/"
+              target="_blank"
+              >The Origins of the Classical Guitar</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Guitar History｜Web Design Project</p>
+    </footer>
+  </body>
+</html>
